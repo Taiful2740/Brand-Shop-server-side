@@ -40,7 +40,7 @@ async function run() {
       const result = await productCollection.findOne(query);
       res.send(result);
     });
-    // my cart
+    // my cart section
     app.get("/cart", async (req, res) => {
       const cursor = cartCollection.find();
       const result = await cursor.toArray();
@@ -60,7 +60,7 @@ async function run() {
       const result = await cartCollection.insertOne(newProduct);
       res.send(result);
     });
-    // cart end
+    // my cart section end
 
     app.post("/product", async (req, res) => {
       const newProduct = req.body;
